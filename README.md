@@ -10,6 +10,9 @@ formant synthesizer with no external library or model file at all.
 
 This documents what the LLM can actually do and what it can't do.
 
+<img width="1072" height="744" alt="Screenshot 2026-08-13 103426" src="https://github.com/user-attachments/assets/e20d8c8e-15b3-4359-b5b7-87aa8331fe99" />
+<img width="1080" height="744" alt="Screenshot 2026-08-13 103335" src="https://github.com/user-attachments/assets/79e4c9d2-7196-4c28-9219-9283a23f190f" />
+
 ---
 
 ## What Sayla can do
@@ -213,7 +216,9 @@ architecture is currently active, live in `engine.c`, along with:
   bundled copy rather than fetching and compiling a second one (which
   previously caused duplicate-symbol linker errors).
 - Listening (whisper.cpp, microphone capture, VAD) is gated behind
-  `SAYLA_ENABLE_VOICE` and safely no-ops when it's off (Set to on by defualt). 
+  `SAYLA_ENABLE_VOICE` and safely no-ops when it's off (Set to on by defualt).
+
+  <img width="1071" height="745" alt="Screenshot 2026-08-13 110122" src="https://github.com/user-attachments/assets/455db1ec-11b2-4ae6-942f-aea14b25fdf8" />
 
 ### The interface
 
@@ -309,6 +314,12 @@ speaking has no dependencies at all):**
 - [whisper.cpp](https://github.com/ggml-org/whisper.cpp) + a downloaded ggml
   model file, fetched automatically by `CMakeLists.txt`
 - miniaudio — no separate fetch needed; sourced from raylib's own bundled copy
+
+
+You only need to separately download a whisper model file yourself and
+point `WHISPER_MODEL_PATH` (in `window.h`) at it (Make a models file in your Release folder and put the ggml-base.en there, outside the models folder put the corpus.txt files).
+
+<img width="628" height="268" alt="Screenshot 2026-08-13 115033" src="https://github.com/user-attachments/assets/066876ae-e324-4890-95ea-1e23b89e6e48" />
 
 ## Building
 
