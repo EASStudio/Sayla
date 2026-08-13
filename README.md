@@ -317,7 +317,7 @@ speaking has no dependencies at all):**
 
 
 You only need to separately download a whisper model file yourself and
-point `WHISPER_MODEL_PATH` (in `window.h`) at it (Make a models file in your Release folder and put the ggml-base.en there, outside the models folder put the corpus.txt files).
+point `WHISPER_MODEL_PATH` (in `window.h`) at it (Make a models folder in your Release folder and put the ggml-base.en there, outside the models folder put the corpus.txt files).
 
 <img width="628" height="268" alt="Screenshot 2026-08-13 115033" src="https://github.com/user-attachments/assets/066876ae-e324-4890-95ea-1e23b89e6e48" />
 
